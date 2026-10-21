@@ -1,4 +1,4 @@
-# DCMT Platform
+# Snaps CRM Platform
 
 A full-stack platform for document management and technical services with customer/provider workflows.
 
