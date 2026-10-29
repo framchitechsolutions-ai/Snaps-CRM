@@ -67,15 +67,15 @@ export default function Sidebar({ userType }: SidebarProps) {
   const isActive = (href: string) => (pathname || '') === href || (pathname || '').startsWith(href)
 
   return (
-    <div className="fixed left-0 top-0 h-screen w-[246px] bg-[#1F2937] text-white flex flex-col z-50 shadow-elevated">
+    <div className="fixed left-0 top-0 h-screen w-[246px] bg-white text-white flex flex-col z-50 shadow-elevated">
       <div className="flex items-center justify-between px-6 py-5 border-b border-gray-700">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-sm">D</span>
           </div>
-          <span className="font-bold text-lg tracking-tight">DCMT</span>
+          <span className="font-bold text-lg tracking-tight text-gray-800">DCMT</span>
         </div>
-        <button className="p-1.5 rounded-lg hover:bg-gray-700 transition-colors text-gray-400 hover:text-white">
+        <button className="p-1.5 rounded-lg hover:bg-gray-700 transition-colors text-gray-500 hover:text-white">
           <ChevronLeft size={16} />
         </button>
       </div>
@@ -93,11 +93,11 @@ export default function Sidebar({ userType }: SidebarProps) {
                     href={item.href}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group ${
                       active
-                        ? 'bg-gray-700 text-white shadow-lg'
-                        : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                        ? 'bg-gray-700 text-light-gray shadow-lg'
+                        : 'text-gray-600 hover:bg-gray-600 hover:text-white'
                     }`}
                   >
-                    <Icon size={20} className={active ? 'text-primary' : 'text-gray-400 group-hover:text-gray-200'} />
+                    <Icon size={20} className={active ? 'text-primary' : 'text-gray-500 group-hover:text-gray-200'} />
                     <span className="text-[14px] font-medium">{item.label}</span>
                     {item.badge && (
                       <span className="ml-auto bg-danger text-white text-[11px] font-bold px-2 py-0.5 rounded-full">
@@ -123,10 +123,10 @@ export default function Sidebar({ userType }: SidebarProps) {
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group ${
                       isActive(item.href)
                         ? 'bg-gray-700 text-white'
-                        : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                        : 'text-gray-800 hover:bg-gray-600 hover:text-white'
                     }`}
                   >
-                    <Icon size={20} className="text-gray-400 group-hover:text-gray-200" />
+                    <Icon size={20} className="text-gray-500 group-hover:text-gray-200" />
                     <span className="text-[14px] font-medium">{item.label}</span>
                   </Link>
                 </li>
@@ -142,10 +142,10 @@ export default function Sidebar({ userType }: SidebarProps) {
             {(user?.first_name?.[0] || user?.email?.[0] || 'U').toUpperCase()}
           </div>
           <div className="min-w-0">
-            <p className="text-sm font-medium text-white truncate">
+            <p className="text-sm font-medium text-black truncate">
               {user?.first_name && user?.last_name ? `${user.first_name} ${user.last_name}` : user?.email || 'User'}
             </p>
-            <p className="text-xs text-gray-400 capitalize">{role}</p>
+            <p className="text-xs text-gray-500 capitalize">{role}</p>
           </div>
         </div>
       </div>
