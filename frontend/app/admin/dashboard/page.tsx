@@ -1,4 +1,4 @@
-'use client'
+---'use client'
 
 import React, { useState, useEffect } from 'react'
 import { Users, UserCheck, CreditCard, TrendingUp, ArrowUpRight, ArrowDownRight, MoreVertical, UserPlus, FolderOpen, ShieldCheck } from 'lucide-react'
