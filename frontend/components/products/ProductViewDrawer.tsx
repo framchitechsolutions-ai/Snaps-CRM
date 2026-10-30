@@ -10,7 +10,7 @@ interface Props {
 }
 
 const currency = (n: string | number) =>
-  new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(Number(n) || 0)
+  new Intl.NumberFormat('en-ZM', { style: 'currency', currency: 'ZMW' }).format(Number(n) || 0)
 
 export default function ProductViewDrawer({ product, onClose }: Props) {
   useEffect(() => {

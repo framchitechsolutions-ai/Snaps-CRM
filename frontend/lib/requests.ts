@@ -55,10 +55,17 @@ export interface ProjectRequest {
 }
 
 export const requestsApi = {
-  listServices: () => apiClient.get<Service[]>('/requests/services/').then((r) => r.data),
+  listServices: () =>
+  apiClient.get('/requests/services/').then((r) => {
+    const data = r.data
+    return Array.isArray(data) ? data : (data?.results ?? [])
+  }),
   listMine: () => apiClient.get<ProjectRequest[]>('/requests/my/').then((r) => r.data),
   listProvider: () =>
-    apiClient.get<ProjectRequest[]>('/requests/provider/').then((r) => r.data),
+  apiClient.get('/requests/provider/').then((r) => {
+    const data = r.data
+    return Array.isArray(data) ? data : (data?.results ?? [])
+  }),
   get: (id: number) => apiClient.get<ProjectRequest>(`/requests/${id}/`).then((r) => r.data),
   create: (payload: { title: string; description: string; selected_services: { service_id: number; price: string }[] }) =>
     apiClient.post<ProjectRequest>('/requests/', payload).then((r) => r.data),

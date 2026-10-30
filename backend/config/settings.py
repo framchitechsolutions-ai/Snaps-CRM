@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'messaging',
     'analytics',
     'apps.products',
+    'apps.quotations'
 ]
 
 MIDDLEWARE = [
@@ -152,9 +153,8 @@ CELERY_BEAT_SCHEDULE = {
 PAYMENT_GATEWAY = env('PAYMENT_GATEWAY', default='dummy')
 # Shared secret used to verify webhook signatures from the PSP.
 PAYMENT_WEBHOOK_SECRET = env('PAYMENT_WEBHOOK_SECRET', default='dev-webhook-secret-change-me')
-# Platform commission taken from each completed transaction (e.g. 0.15 == 15%).
 COMMISSION_RATE = env.float('COMMISSION_RATE', default=0.15)
-# Threshold (in transaction currency) a provider must accrue before auto-payout.
+
 PAYOUT_THRESHOLD = env.float('PAYOUT_THRESHOLD', default=500.00)
 
 ASGI_APPLICATION = 'config.asgi.application'
