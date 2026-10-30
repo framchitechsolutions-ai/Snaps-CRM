@@ -10,7 +10,9 @@ import {
   MessageSquare,
   FileText,
   HelpCircle,
-  Settings,
+  Home, 
+   Settings,
+   Package,
   Bell,
   ChevronLeft,
   Users,
@@ -37,6 +39,7 @@ export default function Sidebar({ userType }: SidebarProps) {
   const menuItems: Record<string, NavItem[]> = {
     customer: [
       { icon: LayoutDashboard, label: 'Dashboard', href: '/customer/dashboard' },
+      { icon: Package, label: 'Products', href: '/products' },
       { icon: FolderOpen, label: 'Requests', href: '/requests' },
       { icon: CreditCard, label: 'Payments', href: '/payments' },
       { icon: FileText, label: 'Documents', href: '/documents' },
@@ -44,6 +47,7 @@ export default function Sidebar({ userType }: SidebarProps) {
     ],
     provider: [
       { icon: LayoutDashboard, label: 'Dashboard', href: '/provider/dashboard' },
+      { icon: Package, label: 'Products', href: '/products' },
       { icon: FolderOpen, label: 'Projects', href: '/requests/provider' },
       { icon: CreditCard, label: 'Invoices', href: '/invoices', badge: 3 },
       { icon: MessageSquare, label: 'Messages', href: '/messaging' },
@@ -51,6 +55,7 @@ export default function Sidebar({ userType }: SidebarProps) {
     ],
     admin: [
       { icon: LayoutDashboard, label: 'Dashboard', href: '/admin/dashboard' },
+      { icon: Package, label: 'Products', href: '/products' },
       { icon: FolderOpen, label: 'Assign Requests', href: '/admin/requests' },
       { icon: CreditCard, label: 'Transactions', href: '/admin/transactions' },
       { icon: Users, label: 'Users', href: '/users' },
